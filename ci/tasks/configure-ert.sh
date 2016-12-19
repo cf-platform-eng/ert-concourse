@@ -62,6 +62,8 @@ function fn_om_linux_curl {
 
     if [[ $(cat /tmp/rqst_stderr.log | grep "Status:" | awk '{print$2}') != "200" ]]; then
       echo "Error Call Failed ...."
+      echo "${curl_method}" "${curl_path}"
+      echo "${curl_data}"
       echo $(cat /tmp/rqst_stderr.log)
       exit 1
     else

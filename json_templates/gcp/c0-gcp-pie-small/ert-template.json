@@ -76,6 +76,9 @@
       ".router.disable_insecure_cookies": {
         "value": false
       },
+      ".mysql_monitor.recipient_email": {
+        "value": "noreply@pivotal.io"
+      },
       ".properties.system_blobstore": {
         "value": "external_gcs"
       },

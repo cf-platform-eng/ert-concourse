@@ -141,5 +141,10 @@
       "autoscaling": {"instance_type": {"id": "automatic"},"instances": 1,"elb_names": [],"internet_connected": false},
       "bootstrap": {"instance_type": {"id": "automatic"},"instances": 1,"elb_names": [],"internet_connected": false},
       "notifications": {"instance_type": {"id": "automatic"},"instances": 1,"elb_names": [],"internet_connected": false}
+  },
+  "errands": {
+    "errands": [
+      {"name": "push-pivotal-account", "post_deploy": false}
+    ]
   }
 }

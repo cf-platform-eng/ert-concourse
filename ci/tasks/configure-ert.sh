@@ -83,10 +83,11 @@ echo "Patching template"
 verison=$(fn_om_linux_curl "GET" "/api/v0/staged/products/${guid_cf}" | jq -r ".product_version")
 script_path="`dirname \"$0\"`"
 comparison=$(${script_path}/../../scripts/semver.sh compare ${verison} "1.10.0")
-if [ comparison -ge 0 ]; then
+if [ ${comparison} -ge 0 ]; then
     echo "Patching 1.10 fixes"
     pip install jsonpatch
-    jsonpatch ${json_file} ${script_path}/../../json_templates/patches/1_10.json > ${json_file}
+    jsonpatch ${json_file} ${script_path}/../../json_templates/patches/1_10.json > ${json_file}.patched
+    mv ${json_file}.patched ${json_file}
 else
     echo "Skipping 1.10 patch for ${verison}"
 fi

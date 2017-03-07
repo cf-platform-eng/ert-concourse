@@ -78,6 +78,9 @@
       ".router.disable_insecure_cookies": {
         "value": false
       },
+      ".diego_cell.garden_network_mtu": {
+        "value": 1354
+      },
       ".properties.system_blobstore": {
         "value": "external_gcs"
       },

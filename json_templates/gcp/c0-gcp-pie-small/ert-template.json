@@ -145,7 +145,8 @@
   },
   "errands": {
     "errands": [
-      {"name": "push-pivotal-account", "post_deploy": false}
+      {"name": "push-pivotal-account", "post_deploy": false},
+      {"name": "nfsbrokerpush", "post_deploy": false}
     ]
   }
 }

@@ -3,42 +3,6 @@ set -e
 
 json_file="json_file/ert.json"
 
-
-# Setup OM Tool
-sudo cp tool-om/om-linux /usr/local/bin
-sudo chmod 755 /usr/local/bin/om-linux
-
-# Set Vars
-
-
-
-# Test if the ssl cert var from concourse is set to 'genrate'.  If so, script will gen a self signed, otherwise will assume its a cert
-if [[ ${pcf_ert_ssl_cert} == "generate" ]]; then
-  echo "=============================================================================================="
-  echo "Generating Self Signed Certs for sys.${pcf_ert_domain} & cfapps.${pcf_ert_domain} ..."
-  echo "=============================================================================================="
-  ert-concourse/scripts/ssl/gen_ssl_certs.sh "sys.${pcf_ert_domain}" "cfapps.${pcf_ert_domain}"
-  export pcf_ert_ssl_cert=$(cat sys.${pcf_ert_domain}.crt)
-  export pcf_ert_ssl_key=$(cat sys.${pcf_ert_domain}.key)
-fi
-
-my_pcf_ert_ssl_cert=$(echo ${pcf_ert_ssl_cert} | sed 's/\s\+/\\\\r\\\\n/g' | sed 's/\\\\r\\\\nCERTIFICATE/ CERTIFICATE/g')
-my_pcf_ert_ssl_key=$(echo ${pcf_ert_ssl_key} | sed 's/\s\+/\\\\r\\\\n/g' | sed 's/\\\\r\\\\nRSA\\\\r\\\\nPRIVATE\\\\r\\\\nKEY/ RSA PRIVATE KEY/g')
-perl -pi -e "s|{{pcf_ert_ssl_cert}}|${my_pcf_ert_ssl_cert}|g" ${json_file}
-perl -pi -e "s|{{pcf_ert_ssl_key}}|${my_pcf_ert_ssl_key}|g" ${json_file}
-perl -pi -e "s/{{pcf_ert_domain}}/${pcf_ert_domain}/g" ${json_file}
-perl -pi -e "s/{{pcf_az_1}}/${pcf_az_1}/g" ${json_file}
-perl -pi -e "s/{{pcf_az_2}}/${pcf_az_2}/g" ${json_file}
-perl -pi -e "s/{{pcf_az_3}}/${pcf_az_3}/g" ${json_file}
-perl -pi -e "s/{{terraform_prefix}}/${terraform_prefix}/g" ${json_file}
-
-
-
-if [[ ! -f ${json_file} ]]; then
-  echo "Error: cant find file=[${json_file}]"
-  exit 1
-fi
-
 function fn_om_linux_curl {
 
     local curl_method=${1}
@@ -72,6 +36,40 @@ function fn_om_linux_curl {
 }
 
 
+# Setup OM Tool
+sudo cp tool-om/om-linux /usr/local/bin
+sudo chmod 755 /usr/local/bin/om-linux
+
+# Set Vars
+
+
+
+# Test if the ssl cert var from concourse is set to 'genrate'.  If so, script will gen a self signed, otherwise will assume its a cert
+if [[ ${pcf_ert_ssl_cert} == "generate" ]]; then
+  echo "=============================================================================================="
+  echo "Generating Self Signed Certs for sys.${pcf_ert_domain} & cfapps.${pcf_ert_domain} ..."
+  echo "=============================================================================================="
+  ert-concourse/scripts/ssl/gen_ssl_certs.sh "sys.${pcf_ert_domain}" "cfapps.${pcf_ert_domain}"
+  export pcf_ert_ssl_cert=$(cat sys.${pcf_ert_domain}.crt)
+  export pcf_ert_ssl_key=$(cat sys.${pcf_ert_domain}.key)
+fi
+
+my_pcf_ert_ssl_cert=$(echo ${pcf_ert_ssl_cert} | sed 's/\s\+/\\\\r\\\\n/g' | sed 's/\\\\r\\\\nCERTIFICATE/ CERTIFICATE/g')
+my_pcf_ert_ssl_key=$(echo ${pcf_ert_ssl_key} | sed 's/\s\+/\\\\r\\\\n/g' | sed 's/\\\\r\\\\nRSA\\\\r\\\\nPRIVATE\\\\r\\\\nKEY/ RSA PRIVATE KEY/g')
+perl -pi -e "s|{{pcf_ert_ssl_cert}}|${my_pcf_ert_ssl_cert}|g" ${json_file}
+perl -pi -e "s|{{pcf_ert_ssl_key}}|${my_pcf_ert_ssl_key}|g" ${json_file}
+perl -pi -e "s/{{pcf_ert_domain}}/${pcf_ert_domain}/g" ${json_file}
+perl -pi -e "s/{{pcf_az_1}}/${pcf_az_1}/g" ${json_file}
+perl -pi -e "s/{{pcf_az_2}}/${pcf_az_2}/g" ${json_file}
+perl -pi -e "s/{{pcf_az_3}}/${pcf_az_3}/g" ${json_file}
+perl -pi -e "s/{{terraform_prefix}}/${terraform_prefix}/g" ${json_file}
+
+
+if [[ ! -f ${json_file} ]]; then
+  echo "Error: cant find file=[${json_file}]"
+  exit 1
+fi
+
 
 echo "=============================================================================================="
 echo "Deploying ERT @ https://opsman.$pcf_ert_domain ..."
@@ -79,6 +77,21 @@ echo "==========================================================================
 # Get cf Product Guid
 guid_cf=$(fn_om_linux_curl "GET" "/api/v0/staged/products" \
             | jq '.[] | select(.type == "cf") | .guid' | tr -d '"' | grep "cf-.*")
+
+
+echo "Patching template"
+verison=$(fn_om_linux_curl "GET" "/api/v0/staged/products/${guid_cf}" | jq -r ".product_version")
+script_path="`dirname \"$0\"`"
+comparison=$(${script_path}/../../scripts/semver.sh compare ${verison} "1.10.0")
+if [ ${comparison} -ge 0 ]; then
+    echo "Patching 1.10 fixes"
+    pip install jsonpatch
+    jsonpatch ${json_file} ${script_path}/../../json_templates/patches/1_10.json > ${json_file}.patched
+    mv ${json_file}.patched ${json_file}
+else
+    echo "Skipping 1.10 patch for ${verison}"
+fi
+
 
 echo "=============================================================================================="
 echo "Found ERT Deployment with guid of ${guid_cf}"

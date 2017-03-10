@@ -80,8 +80,10 @@ guid_cf=$(fn_om_linux_curl "GET" "/api/v0/staged/products" \
 
 
 echo "Patching template"
-verison=$(fn_om_linux_curl "GET" "/api/v0/staged/products/${guid_cf}" | jq -r ".product_version")
+echo "GET doesn't work pre-1.10, hard-coding to old version to stop breakage"
+verison="1.9.0"
 script_path="`dirname \"$0\"`"
+echo "Version: ${verison}"
 comparison=$(${script_path}/../../scripts/semver.sh compare ${verison} "1.10.0")
 if [ ${comparison} -ge 0 ]; then
     echo "Patching 1.10 fixes"

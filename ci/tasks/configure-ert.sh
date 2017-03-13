@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+script_dir=$(dirname "$(readlink -f "$0")")
+echo "Script dir: ${script_dir}"
+
 json_file="json_file/ert.json"
 
 function fn_om_linux_curl {
@@ -83,7 +86,7 @@ echo "Patching template with: ${ert_patches[*]}"
 for t in ${ert_patches[@]}; do
     echo "Adding patch ${t}"
     pip install jsonpatch
-    jsonpatch ${json_file} ${script_path}/../../json_templates/patches/${t} > ${json_file}.patched
+    jsonpatch ${json_file} ${script_dir}/../../json_templates/patches/${t} > ${json_file}.patched
     mv ${json_file}.patched ${json_file}
 done
 

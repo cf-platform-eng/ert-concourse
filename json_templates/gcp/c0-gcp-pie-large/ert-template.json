@@ -78,9 +78,6 @@
       ".router.disable_insecure_cookies": {
         "value": false
       },
-      ".diego_cell.garden_network_mtu": {
-        "value": 1354
-      },
       ".mysql_monitor.recipient_email": {
         "value": "noreply@pivotal.io"
       },

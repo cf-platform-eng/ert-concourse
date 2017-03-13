@@ -79,20 +79,13 @@ guid_cf=$(fn_om_linux_curl "GET" "/api/v0/staged/products" \
             | jq '.[] | select(.type == "cf") | .guid' | tr -d '"' | grep "cf-.*")
 
 
-echo "Patching template"
-echo "GET doesn't work pre-1.10, hard-coding to old version to stop breakage"
-verison="1.9.0"
-script_path="`dirname \"$0\"`"
-echo "Version: ${verison}"
-comparison=$(${script_path}/../../scripts/semver.sh compare ${verison} "1.10.0")
-if [ ${comparison} -ge 0 ]; then
-    echo "Patching 1.10 fixes"
+echo "Patching template with: ${ert_patches[*]}"
+for t in ${ert_patches[@]}; do
+    echo "Adding patch ${t}"
     pip install jsonpatch
-    jsonpatch ${json_file} ${script_path}/../../json_templates/patches/1_10.json > ${json_file}.patched
+    jsonpatch ${json_file} ${script_path}/../../json_templates/patches/${t} > ${json_file}.patched
     mv ${json_file}.patched ${json_file}
-else
-    echo "Skipping 1.10 patch for ${verison}"
-fi
+done
 
 
 echo "=============================================================================================="

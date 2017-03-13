@@ -82,18 +82,20 @@ guid_cf=$(fn_om_linux_curl "GET" "/api/v0/staged/products" \
             | jq '.[] | select(.type == "cf") | .guid' | tr -d '"' | grep "cf-.*")
 
 
+echo "=============================================================================================="
+echo "Found ERT Deployment with guid of ${guid_cf}"
+echo "=============================================================================================="
+
+
+echo "=============================================================================================="
 echo "Patching template with: ${ert_patches[*]}"
+echo "=============================================================================================="
 for t in ${ert_patches[@]}; do
-    echo "Adding patch ${t}"
+    echo "Adding patch ${t} to ${json_file}"
     pip install jsonpatch
     jsonpatch ${json_file} ${script_dir}/../../json_templates/patches/${t} > ${json_file}.patched
     mv ${json_file}.patched ${json_file}
 done
-
-
-echo "=============================================================================================="
-echo "Found ERT Deployment with guid of ${guid_cf}"
-echo "=============================================================================================="
 
 # Set Networks & AZs
 echo "=============================================================================================="

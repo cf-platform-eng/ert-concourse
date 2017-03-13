@@ -1,11 +1,9 @@
 [
   {
     "op": "add",
-    "path": "/properties/properties",
+    "path": "/properties/properties/.diego_cell.garden_network_mtu",
     "value": {
-      ".diego_cell.garden_network_mtu": {
-        "value": 1354
-      }
+      "value": 1354
     }
   }
 ]

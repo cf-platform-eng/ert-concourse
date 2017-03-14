@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+script_dir=$(dirname "$(readlink -f "$0")")
+echo "Script dir: ${script_dir}"
+
 json_file="json_file/ert.json"
 
 function fn_om_linux_curl {
@@ -79,23 +82,20 @@ guid_cf=$(fn_om_linux_curl "GET" "/api/v0/staged/products" \
             | jq '.[] | select(.type == "cf") | .guid' | tr -d '"' | grep "cf-.*")
 
 
-echo "Patching template"
-verison=$(fn_om_linux_curl "GET" "/api/v0/staged/products/${guid_cf}" | jq -r ".product_version")
-script_path="`dirname \"$0\"`"
-comparison=$(${script_path}/../../scripts/semver.sh compare ${verison} "1.10.0")
-if [ ${comparison} -ge 0 ]; then
-    echo "Patching 1.10 fixes"
-    pip install jsonpatch
-    jsonpatch ${json_file} ${script_path}/../../json_templates/patches/1_10.json > ${json_file}.patched
-    mv ${json_file}.patched ${json_file}
-else
-    echo "Skipping 1.10 patch for ${verison}"
-fi
-
-
 echo "=============================================================================================="
 echo "Found ERT Deployment with guid of ${guid_cf}"
 echo "=============================================================================================="
+
+
+echo "=============================================================================================="
+echo "Patching template with: ${ert_patches[*]}"
+echo "=============================================================================================="
+for t in ${ert_patches[@]}; do
+    echo "Adding patch ${t} to ${json_file}"
+    pip install jsonpatch
+    jsonpatch ${json_file} ${script_dir}/../../json_templates/patches/${t} > ${json_file}.patched
+    mv ${json_file}.patched ${json_file}
+done
 
 # Set Networks & AZs
 echo "=============================================================================================="

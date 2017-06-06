@@ -110,9 +110,9 @@
     "path": "/properties/properties/.properties.system_database.external.silk_password"
   },
   {
-    "op": "add",
-    "path": "/properties/properties/.properties.uaa_database.value",
-    "value": "external"
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database",
+    "path": "/properties/properties/.properties.uaa_database"
   },
   {
     "op": "copy",

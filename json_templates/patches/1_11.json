@@ -1,0 +1,122 @@
+[
+  {
+    "op": "move",
+    "from": "/properties/properties/.properties.system_database.external.username",
+    "path": "/properties/properties/.properties.system_database.external.account_username"
+  },
+  {
+    "op": "move",
+    "from": "/properties/properties/.properties.system_database.external.password",
+    "path": "/properties/properties/.properties.system_database.external.account_password"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_username",
+    "path": "/properties/properties/.properties.system_database.external.app_usage_service_username"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_password",
+    "path": "/properties/properties/.properties.system_database.external.app_usage_service_password"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_username",
+    "path": "/properties/properties/.properties.system_database.external.autoscale_username"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_password",
+    "path": "/properties/properties/.properties.system_database.external.autoscale_password"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_username",
+    "path": "/properties/properties/.properties.system_database.external.ccdb_username"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_password",
+    "path": "/properties/properties/.properties.system_database.external.ccdb_password"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_username",
+    "path": "/properties/properties/.properties.system_database.external.diego_username"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_password",
+    "path": "/properties/properties/.properties.system_database.external.diego_password"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_username",
+    "path": "/properties/properties/.properties.system_database.external.networkpolicyserver_username"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_password",
+    "path": "/properties/properties/.properties.system_database.external.networkpolicyserver_password"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_username",
+    "path": "/properties/properties/.properties.system_database.external.nfsvolume_username"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_password",
+    "path": "/properties/properties/.properties.system_database.external.nfsvolume_password"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_username",
+    "path": "/properties/properties/.properties.system_database.external.notifications_username"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_password",
+    "path": "/properties/properties/.properties.system_database.external.notifications_password"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_username",
+    "path": "/properties/properties/.properties.system_database.external.routing_username"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_password",
+    "path": "/properties/properties/.properties.system_database.external.routing_password"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_username",
+    "path": "/properties/properties/.properties.system_database.external.locket_username"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_password",
+    "path": "/properties/properties/.properties.system_database.external.locket_password"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_username",
+    "path": "/properties/properties/.properties.system_database.external.silk_username"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_password",
+    "path": "/properties/properties/.properties.system_database.external.silk_password"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_username",
+    "path": "/properties/properties/.properties.uaa_database.external.uaa_username"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.account_password",
+    "path": "/properties/properties/.properties.uaa_database.external.uaa_password"
+  }
+]

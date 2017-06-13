@@ -32,6 +32,7 @@ function fn_om_linux_curl {
       echo "${curl_method}" "${curl_path}"
       echo "${curl_data}"
       echo $(cat /tmp/rqst_stderr.log)
+      echo $(cat /tmp/rqst_stdout.log)
       exit 1
     else
       echo $(cat /tmp/rqst_stdout.log)

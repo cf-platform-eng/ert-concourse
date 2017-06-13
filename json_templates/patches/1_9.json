@@ -42,6 +42,26 @@
   {
     "op": "copy",
     "from": "/properties/properties/.properties.system_database.external.username",
+    "path": "/properties/properties/.properties.system_database.external.networkpolicyserver_username"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.password",
+    "path": "/properties/properties/.properties.system_database.external.networkpolicyserver_password"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.username",
+    "path": "/properties/properties/.properties.system_database.external.nfsvolume_username"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.password",
+    "path": "/properties/properties/.properties.system_database.external.nfsvolume_password"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.system_database.external.username",
     "path": "/properties/properties/.properties.system_database.external.notifications_username"
   },
   {
@@ -60,12 +80,12 @@
     "path": "/properties/properties/.properties.system_database.external.routing_password"
   },
   {
-    "op": "copy",
+    "op": "move",
     "from": "/properties/properties/.properties.system_database.external.username",
     "path": "/properties/properties/.properties.system_database.external.uaa_username"
   },
   {
-    "op": "copy",
+    "op": "move",
     "from": "/properties/properties/.properties.system_database.external.password",
     "path": "/properties/properties/.properties.system_database.external.uaa_password"
   }

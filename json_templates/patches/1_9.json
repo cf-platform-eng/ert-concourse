@@ -42,26 +42,6 @@
   {
     "op": "copy",
     "from": "/properties/properties/.properties.system_database.external.username",
-    "path": "/properties/properties/.properties.system_database.external.networkpolicyserver_username"
-  },
-  {
-    "op": "copy",
-    "from": "/properties/properties/.properties.system_database.external.password",
-    "path": "/properties/properties/.properties.system_database.external.networkpolicyserver_password"
-  },
-  {
-    "op": "copy",
-    "from": "/properties/properties/.properties.system_database.external.username",
-    "path": "/properties/properties/.properties.system_database.external.nfsvolume_username"
-  },
-  {
-    "op": "copy",
-    "from": "/properties/properties/.properties.system_database.external.password",
-    "path": "/properties/properties/.properties.system_database.external.nfsvolume_password"
-  },
-  {
-    "op": "copy",
-    "from": "/properties/properties/.properties.system_database.external.username",
     "path": "/properties/properties/.properties.system_database.external.notifications_username"
   },
   {

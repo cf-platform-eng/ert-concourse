@@ -1,0 +1,6 @@
+[
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.networking_point_of_entry.external_ssl.ssl_rsa_certificate"
+  }
+]

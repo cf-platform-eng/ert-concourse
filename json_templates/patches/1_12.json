@@ -1,6 +1,7 @@
 [
   {
-    "op": "remove",
-    "path": "/properties/properties/.properties.networking_point_of_entry.external_ssl.ssl_rsa_certificate"
+    "op": "move",
+    "from": "/properties/properties/.properties.networking_point_of_entry.external_ssl.ssl_rsa_certificate",
+    "path": "/properties/properties/.properties.networking_poe_ssl_cert"
   }
 ]

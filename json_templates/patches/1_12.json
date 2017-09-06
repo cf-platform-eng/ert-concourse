@@ -38,6 +38,10 @@
   },
   {
     "op": "remove",
+    "path": "/jobs/mysql-rejoin-unsafe/instances"
+  },
+  {
+    "op": "remove",
     "path": "/jobs/notifications/instances"
   }
 ]

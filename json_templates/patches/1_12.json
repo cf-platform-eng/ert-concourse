@@ -47,6 +47,6 @@
   {
     "op": "add",
     "path": "/properties/properties/.properties.haproxy_forward_tls",
-    "value": "{ \"value\": \"disable\" }"
+    "value": { "value": "disable" }
   }
 ]

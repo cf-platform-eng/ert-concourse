@@ -43,5 +43,10 @@
   {
     "op": "remove",
     "path": "/jobs/notifications/instances"
+  },
+  {
+    "op": "add",
+    "path": "/properties/properties/.properties.haproxy_forward_tls",
+    "value": "disable"
   }
 ]

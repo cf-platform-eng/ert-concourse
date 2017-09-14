@@ -1,0 +1,7 @@
+[
+  {
+    "op": "add",
+    "path": "/jobs/autoscaling/instances",
+    "value": "automatic"
+  }
+]

@@ -1,7 +1,6 @@
 [
   {
-    "op": "add",
-    "path": "/jobs/autoscaling/instances",
-    "value": "automatic"
+    "op": "remove",
+    "path": "/jobs/autoscaling"
   }
 ]

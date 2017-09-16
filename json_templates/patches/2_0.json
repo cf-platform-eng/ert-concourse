@@ -1,6 +1,42 @@
 [
   {
     "op": "remove",
+    "path": "/jobs/push-apps-manager"
+  },
+  {
+    "op": "remove",
+    "path": "/jobs/smoke-tests"
+  },
+  {
+    "op": "remove",
+    "path": "/jobs/notifications-ui"
+  },
+  {
+    "op": "remove",
+    "path": "/jobs/autoscaling-register-broker"
+  },
+  {
+    "op": "remove",
+    "path": "/jobs/autoscaling-destroy-broker"
+  },
+  {
+    "op": "remove",
+    "path": "/jobs/push-pivotal-account"
+  },
+  {
+    "op": "remove",
     "path": "/jobs/autoscaling"
+  },
+  {
+    "op": "remove",
+    "path": "/jobs/bootstrap"
+  },
+  {
+    "op": "remove",
+    "path": "/jobs/mysql-rejoin-unsafe"
+  },
+  {
+    "op": "remove",
+    "path": "/jobs/notifications"
   }
 ]

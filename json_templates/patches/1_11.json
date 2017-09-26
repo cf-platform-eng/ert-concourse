@@ -133,5 +133,45 @@
     "op": "copy",
     "from": "/properties/properties/.properties.system_database.external.account_password",
     "path": "/properties/properties/.properties.uaa_database.external.uaa_password"
+  },
+  {
+    "op": "remove",
+    "path": "/jobs/push-apps-manager/instances"
+  },
+  {
+    "op": "remove",
+    "path": "/jobs/smoke-tests/instances"
+  },
+  {
+    "op": "remove",
+    "path": "/jobs/notifications-ui/instances"
+  },
+  {
+    "op": "remove",
+    "path": "/jobs/autoscaling-register-broker/instances"
+  },
+  {
+    "op": "remove",
+    "path": "/jobs/autoscaling-destroy-broker/instances"
+  },
+  {
+    "op": "remove",
+    "path": "/jobs/push-pivotal-account/instances"
+  },
+  {
+    "op": "remove",
+    "path": "/jobs/autoscaling/instances"
+  },
+  {
+    "op": "remove",
+    "path": "/jobs/bootstrap/instances"
+  },
+  {
+    "op": "remove",
+    "path": "/jobs/mysql-rejoin-unsafe/instances"
+  },
+  {
+    "op": "remove",
+    "path": "/jobs/notifications/instances"
   }
 ]

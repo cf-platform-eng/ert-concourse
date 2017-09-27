@@ -5,46 +5,6 @@
     "path": "/properties/properties/.properties.networking_poe_ssl_cert"
   },
   {
-    "op": "remove",
-    "path": "/jobs/push-apps-manager/instances"
-  },
-  {
-    "op": "remove",
-    "path": "/jobs/smoke-tests/instances"
-  },
-  {
-    "op": "remove",
-    "path": "/jobs/notifications-ui/instances"
-  },
-  {
-    "op": "remove",
-    "path": "/jobs/autoscaling-register-broker/instances"
-  },
-  {
-    "op": "remove",
-    "path": "/jobs/autoscaling-destroy-broker/instances"
-  },
-  {
-    "op": "remove",
-    "path": "/jobs/push-pivotal-account/instances"
-  },
-  {
-    "op": "remove",
-    "path": "/jobs/autoscaling/instances"
-  },
-  {
-    "op": "remove",
-    "path": "/jobs/bootstrap/instances"
-  },
-  {
-    "op": "remove",
-    "path": "/jobs/mysql-rejoin-unsafe/instances"
-  },
-  {
-    "op": "remove",
-    "path": "/jobs/notifications/instances"
-  },
-  {
     "op": "add",
     "path": "/properties/properties/.properties.haproxy_forward_tls",
     "value": { "value": "disable" }

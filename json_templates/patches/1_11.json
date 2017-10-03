@@ -173,5 +173,10 @@
   {
     "op": "remove",
     "path": "/jobs/notifications/instances"
+  },
+  {
+    "op": "add",
+    "path": "/properties/properties/.properties.networking_point_of_entry.external_ssl.ssl_ciphers",
+    "value": { "value": "ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384" }
   }
 ]

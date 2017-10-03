@@ -10,6 +10,10 @@
     "value": { "value": "disable" }
   },
   {
+    "op": "remove",
+    "path": "/properties/properties/.properties.networking_point_of_entry.external_ssl.ssl_ciphers"
+  },
+  {
     "op": "add",
     "path": "/properties/properties/.properties.gorouter_ssl_ciphers",
     "value": { "value": "ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384" }

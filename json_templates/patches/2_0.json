@@ -56,7 +56,7 @@
   },
   {
     "op": "move",
-    "from": "/properties/properties/.properties.push-apps-manager.company_name",
-    "path": "/properties/properties/.properties.push_apps_manager_company_name"
+    "from": "/properties/properties/.push-apps-manager.company_name",
+    "path": "/properties/properties/.push_apps_manager_company_name"
   }
 ]

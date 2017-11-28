@@ -40,23 +40,15 @@
     "path": "/jobs/notifications"
   },
   {
-    "op": "copy",
-    "from": "/properties/properties/.properties.networking_poe_ssl_cert",
-    "path": "/properties/properties/.properties.networking_poe_ssl_certs"
+    "op": "remove",
+    "path": "/properties/properties/.properties.networking_poe_ssl_cert"
   },
   {
-    "op": "copy",
-    "from": "/properties/properties/.properties.networking_poe_ssl_cert",
-    "path": "/properties/properties/.properties.network_policy_server_cert"
+    "op": "remove",
+    "path": "/properties/properties/.properties.networking_point_of_entry"
   },
   {
-    "op": "move",
-    "from": "/properties/properties/.properties.networking_poe_ssl_cert",
-    "path": "/properties/properties/.properties.network_policy_agent_cert"
-  },
-  {
-    "op": "move",
-    "from": "/properties/properties/.push-apps-manager.company_name",
-    "path": "/properties/properties/.push_apps_manager_company_name"
+    "op": "remove",
+    "path": "/properties/properties/.push-apps-manager.company_name"
   }
 ]

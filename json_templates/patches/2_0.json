@@ -38,5 +38,25 @@
   {
     "op": "remove",
     "path": "/jobs/notifications"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.networking_poe_ssl_cert",
+    "path": "/properties/properties/.properties.networking_poe_ssl_certs"
+  },
+  {
+    "op": "copy",
+    "from": "/properties/properties/.properties.networking_poe_ssl_cert",
+    "path": "/properties/properties/.properties.network_policy_server_cert"
+  },
+  {
+    "op": "move",
+    "from": "/properties/properties/.properties.networking_poe_ssl_cert",
+    "path": "/properties/properties/.properties.network_policy_agent_cert"
+  },
+  {
+    "op": "move",
+    "from": "/properties/properties/.properties.push-apps-manager.company_name",
+    "path": "/properties/properties/.properties.push_apps_manager_company_name"
   }
 ]

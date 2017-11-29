@@ -40,8 +40,14 @@
     "path": "/jobs/notifications"
   },
   {
-    "op": "remove",
-    "path": "/properties/properties/.properties.networking_poe_ssl_cert"
+    "move": "add",
+    "path": "/properties/properties/.properties.networking_poe_ssl_certs",
+    "value": []
+  },
+  {
+    "move": "copy",
+    "from": "/properties/properties/.properties.networking_poe_ssl_cert",
+    "path": "/properties/properties/.properties.networking_poe_ssl_certs/-"
   },
   {
     "op": "remove",

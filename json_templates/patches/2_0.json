@@ -42,12 +42,16 @@
   {
     "op": "add",
     "path": "/properties/properties/.properties.networking_poe_ssl_certs",
-    "value": []
+    "value": { "value": [ { "name": "PrimaryKey" } ] }
   },
   {
     "op": "copy",
-    "from": "/properties/properties/.properties.networking_poe_ssl_cert",
-    "path": "/properties/properties/.properties.networking_poe_ssl_certs/-"
+    "from": "/properties/properties/.properties.networking_poe_ssl_cert/value",
+    "path": "/properties/properties/.properties.networking_poe_ssl_certs/value/0/certificate"
+  },
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.networking_poe_ssl_cert"
   },
   {
     "op": "remove",
@@ -56,5 +60,10 @@
   {
     "op": "remove",
     "path": "/properties/properties/.push-apps-manager.company_name"
+  },
+  {
+    "op": "add",
+    "path": "/properties/properties/.properties.credhub_key_encryption_passwords",
+    "value": { "value": [ { "name": "PrimaryKey", "key": { "secret": "01234567890123456789" }, "primary": "true" } ] }
   }
 ]

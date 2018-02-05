@@ -1,0 +1,9 @@
+[
+  {
+    "op": "add",
+    "path": "/properties/properties/container_networking_interface_plugin/silk/network_mtu",
+    "value": {
+      "value": 1354
+    }
+  }
+]

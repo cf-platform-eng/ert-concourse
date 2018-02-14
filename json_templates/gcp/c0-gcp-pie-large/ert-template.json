@@ -110,6 +110,26 @@
         "secret": "{{gcp_storage_secret_key}}"
         }
       },
+      ".properties.credhub_database": {
+        "value": "external"
+      },
+      ".properties.credhub_database.external.port": {
+        "value": "3306"
+      },
+      ".properties.credhub_database.external.host": {
+        "value": "{{gcloud_sql_instance_ip}}"
+      },
+      ".properties.credhub_database.external.username": {
+        "value": "{{gcloud_sql_instance_username}}"
+      },
+      ".properties.credhub_database.external.password": {
+        "value": {
+          "secret": "{{gcloud_sql_instance_password}}"
+        }
+      },
+      ".properties.credhub_database.external.tls_ca": {
+        "value": "{{gcloud_sql_instance_ca}}"
+      },
       ".push-apps-manager.company_name": {
         "value": "pcf-gcp"
       }
@@ -149,7 +169,8 @@
       "mysql-rejoin-unsafe": {"instance_type": {"id": "automatic"},"instances": 0,"elb_names": [],"internet_connected": false},
       "autoscaling": {"instance_type": {"id": "automatic"},"instances": 1,"elb_names": [],"internet_connected": false},
       "bootstrap": {"instance_type": {"id": "automatic"},"instances": 1,"elb_names": [],"internet_connected": false},
-      "notifications": {"instance_type": {"id": "automatic"},"instances": 1,"elb_names": [],"internet_connected": false}
+      "notifications": {"instance_type": {"id": "automatic"},"instances": 1,"elb_names": [],"internet_connected": false},
+      "credhub": {"instance_type": {"id": "automatic"},"instances": 1,"elb_names": [],"internet_connected": false}
   },
   "errands": {
     "errands": [

@@ -25,7 +25,7 @@ gcloud_sql_instance_ca=$(gcloud sql instances describe ${gcloud_sql_instance} --
 gcloud_sql_instance_ca="${gcloud_sql_instance_ca%\"}"
 gcloud_sql_instance_ca="${gcloud_sql_instance_ca#\"}"
 # Escape for regexp
-gcloud_sql_instance_ca="$(printf '%s' "$gcloud_sql_instance_ca" | sed 's/[.[/\*^$()+?{|]/\\&/g')"
+gcloud_sql_instance_ca="$(printf '%s' "$gcloud_sql_instance_ca" | sed 's/[.[/\*^$()+?{|]/\\&/g' | sed 's/\\n/\\\\n/g')"
 
 perl -pi -e "s/{{gcloud_sql_instance_ip}}/${gcloud_sql_instance_ip}/g" ${json_file}
 perl_cmd="perl -pi -e \"s/{{gcloud_sql_instance_username}}/${pcf_opsman_admin}/g\" ${json_file}"

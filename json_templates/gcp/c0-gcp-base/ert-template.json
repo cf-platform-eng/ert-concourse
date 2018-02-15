@@ -121,6 +121,9 @@
       ".properties.credhub_database.external.tls_ca": {
         "value": "{{gcloud_sql_instance_ca}}"
       },
+      ".properties.secure_service_instance_credentials": {
+        "value": true
+      },
       ".push-apps-manager.company_name": {
         "value": "pcf-gcp"
       }

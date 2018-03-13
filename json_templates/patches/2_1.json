@@ -1,0 +1,6 @@
+[
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.mysql_backups"
+  }
+]

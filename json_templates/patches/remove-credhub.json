@@ -1,6 +1,15 @@
 [
   {
     "op": "remove",
+    "path": "/properties/properties/.properties.secure_service_instance_credentials"
+  },
+  {
+    "op": "add",
+    "path": "/properties/properties/.properties.secure_service_instance_credentials",
+    "value": { "value": "false" }
+  },
+  {
+    "op": "remove",
     "path": "/jobs/credhub"
   }
 ]

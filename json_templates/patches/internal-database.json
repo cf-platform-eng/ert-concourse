@@ -1,0 +1,12 @@
+[
+  {
+    "op": "replace",
+    "path": "/properties/properties/.properties.system_database",
+    "value": { "value": "internal_mysql" }
+  },
+  {
+    "op": "replace",
+    "path": "/jobs/mysql/instances",
+    "value": 1
+  }
+]

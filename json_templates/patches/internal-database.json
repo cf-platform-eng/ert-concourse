@@ -1,12 +1,12 @@
 [
   {
-    "op": "replace",
-    "path": "/properties/properties/.properties.system_database",
-    "value": { "value": "internal_mysql" }
+    "op": "remove",
+    "path": "/properties/properties/.properties.system_database"
   },
   {
-    "op": "remove",
-    "path": "/properties/properties/.properties.system_database.external"
+    "op": "add",
+    "path": "/properties/properties/.properties.system_database",
+    "value": { "value": "internal_mysql" }
   },
   {
     "op": "replace",

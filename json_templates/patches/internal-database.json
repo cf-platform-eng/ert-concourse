@@ -5,6 +5,10 @@
     "value": { "value": "internal_mysql" }
   },
   {
+    "op": "remove",
+    "path": "/properties/properties/.properties.external"
+  },
+  {
     "op": "replace",
     "path": "/jobs/mysql/instances",
     "value": 1

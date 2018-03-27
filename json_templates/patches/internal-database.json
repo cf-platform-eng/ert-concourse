@@ -6,7 +6,7 @@
   },
   {
     "op": "remove",
-    "path": "/properties/properties/.properties.external"
+    "path": "/properties/properties/.properties.system_database.external"
   },
   {
     "op": "replace",

@@ -28,5 +28,10 @@
     "op": "replace",
     "path": "/jobs/mysql/instances",
     "value": 1
+  },
+  {
+    "op": "replace",
+    "path": "/jobs/mysql_proxy/instances",
+    "value": 1
   }
 ]

@@ -1,28 +1,23 @@
 [
   {
     "op": "remove",
-    "path": "/properties/properties/.properties.credhub_database.external.host",
-    "value": { "value": "internal_mysql" }
+    "path": "/properties/properties/.properties.credhub_database.external.host"
   },
   {
     "op": "remove",
-    "path": "/properties/properties/.properties.credhub_database.external.port",
-    "value": { "value": "internal_mysql" }
+    "path": "/properties/properties/.properties.credhub_database.external.port"
   },
   {
-    "op": "replace",
-    "path": "/properties/properties/.properties.credhub_database.external.username",
-    "value": { "value": "internal_mysql" }
+    "op": "remove",
+    "path": "/properties/properties/.properties.credhub_database.external.username"
   },
   {
-    "op": "replace",
-    "path": "/properties/properties/.properties.credhub_database.external.password",
-    "value": { "value": "internal_mysql" }
+    "op": "remove",
+    "path": "/properties/properties/.properties.credhub_database.external.password"
   },
   {
-    "op": "replace",
-    "path": "/properties/properties/.properties.credhub_database.external.tls_ca",
-    "value": { "value": "internal_mysql" }
+    "op": "remove",
+    "path": "/properties/properties/.properties.credhub_database.external.tls_ca"
   },
   {
     "op": "replace",

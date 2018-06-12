@@ -1,0 +1,37 @@
+[
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.credhub_database.external.host"
+  },
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.credhub_database.external.port"
+  },
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.credhub_database.external.username"
+  },
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.credhub_database.external.password"
+  },
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.credhub_database.external.tls_ca"
+  },
+  {
+    "op": "replace",
+    "path": "/properties/properties/.properties.credhub_database",
+    "value": { "value": "internal_mysql" }
+  },
+  {
+    "op": "replace",
+    "path": "/jobs/mysql/instances",
+    "value": 1
+  },
+  {
+    "op": "replace",
+    "path": "/jobs/mysql_proxy/instances",
+    "value": 1
+  }
+]

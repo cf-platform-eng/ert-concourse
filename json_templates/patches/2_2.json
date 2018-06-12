@@ -1,0 +1,7 @@
+[
+  {
+    "op": "remove",
+    "type": "remove",
+    "path": "/errands/errands/name=push-pivotal-account"
+  }
+]

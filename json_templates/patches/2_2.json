@@ -1,7 +1,8 @@
 [
   {
-    "op": "remove",
-    "type": "remove",
-    "path": "/errands/errands/name=push-pivotal-account"
+    "op": "replace",
+    "type": "replace",
+    "path": "/errands/errands",
+    "value": [ {"name": "nfsbrokerpush", "post_deploy": false} ]
   }
 ]

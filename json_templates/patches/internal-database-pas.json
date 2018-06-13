@@ -1,0 +1,61 @@
+[
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.system_database.external.account_password"
+  },
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.system_database.external.app_usage_service_password"
+  },
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.system_database.external.autoscale_password"
+  },
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.system_database.external.ccdb_password"
+  },
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.system_database.external.diego_password"
+  },
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.system_database.external.locket_password"
+  },
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.system_database.external.networkpolicyserver_password"
+  },
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.system_database.external.nfsvolume_password"
+  },
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.system_database.external.notifications_password"
+  },
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.system_database.external.routing_password"
+  },
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.system_database.external.silk_password"
+  },
+  {
+    "op": "replace",
+    "path": "/properties/properties/.properties.system_database",
+    "value": { "value": "internal_mysql" }
+  },
+  {
+    "op": "replace",
+    "path": "/jobs/mysql/instances",
+    "value": 1
+  },
+  {
+    "op": "replace",
+    "path": "/jobs/mysql_proxy/instances",
+    "value": 1
+  }
+]

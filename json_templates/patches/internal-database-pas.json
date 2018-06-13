@@ -85,10 +85,6 @@
   },
   {
     "op": "remove",
-    "path": "/properties/properties/.properties.system_database.external.app_usage_service_username"
-  },
-  {
-    "op": "remove",
     "path": "/properties/properties/.properties.system_database.external.locket_username"
   },
   {

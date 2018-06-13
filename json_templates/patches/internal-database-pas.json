@@ -53,6 +53,10 @@
   },
   {
     "op": "remove",
+    "path": "/properties/properties/.properties.system_database.external.silk_username"
+  },
+  {
+    "op": "remove",
     "path": "/properties/properties/.properties.system_database.external.silk_password"
   },
   {

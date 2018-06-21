@@ -7,7 +7,7 @@ set -e
 
 
 set +e
-apt-get remove google-cloud-sdk
+apt-get -y remove google-cloud-sdk
 set -e
 
 wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-206.0.0-linux-x86_64.tar.gz

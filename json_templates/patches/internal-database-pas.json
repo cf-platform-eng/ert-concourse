@@ -96,8 +96,29 @@
     "path": "/properties/properties/.properties.system_database.external.autoscale_username"
   },
   {
+    "op": "remove",
+    "path": "/properties/properties/.properties.uaa_database.external.host"
+  },
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.uaa_database.external.port"
+  },
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.uaa_database.external.uaa_username"
+  },
+  {
+    "op": "remove",
+    "path": "/properties/properties/.properties.uaa_database.external.uaa_password"
+  },
+  {
     "op": "replace",
     "path": "/properties/properties/.properties.system_database",
+    "value": { "value": "internal_mysql" }
+  },
+  {
+    "op": "replace",
+    "path": "/properties/properties/.properties.uaa_database",
     "value": { "value": "internal_mysql" }
   },
   {

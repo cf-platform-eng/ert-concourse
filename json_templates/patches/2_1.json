@@ -4,7 +4,11 @@
     "path": "/properties/properties/.properties.mysql_backups"
   },
   {
-    "op": "remove",
-    "path": "/errands/errands/name=push-pivotal-account"
+    "op": "replace",
+    "path": "/errands/errands",
+    "value": {
+      "name": "nfsbrokerpush",
+      "post_deploy": false
+    }
   }
 ]

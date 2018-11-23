@@ -6,9 +6,9 @@
   {
     "op": "replace",
     "path": "/errands/errands",
-    "value": {
+    "value": [{
       "name": "nfsbrokerpush",
       "post_deploy": false
-    }
+    }]
   }
 ]
